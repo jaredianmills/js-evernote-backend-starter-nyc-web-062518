@@ -8,7 +8,15 @@
 User.destroy_all
 u = User.create(name: ENV['USER'])
 
-Note.destroy_all
-10.times do
-  Note.create(user: u, title: Faker::Lorem.sentence(rand(4) + 1, true), body: Faker::Lorem.paragraphs(3, true).join('\n'))
+# Note.destroy_all
+# 10.times do
+#   Note.create(user: u, title: Faker::Lorem.sentence(rand(4) + 1, true), body: Faker::Lorem.paragraphs(3, true).join('\n'))
+# end
+
+100.times do
+  Note.create(user: u, title: Faker::Seinfeld.character, body: Faker::Seinfeld.quote)
 end
+
+# 20.times do
+#   Note.create(user: u, title: Faker::TwinPeaks.character, body: Faker::TwinPeaks.quote)
+# end
